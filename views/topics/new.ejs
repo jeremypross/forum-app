@@ -2,9 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>New Topic</title>
   </head>
   <body>
+    <h1>Add Topic</h1>
+    <form method="POST" action="/topics/new"><br>
+      <input name="topics[title]" placeholder="subject" type="text"/><br>
+      <input name="topics[content]" placeholder="content" type="text"/><br>
+      <input name="topics[username]" placeholder="username" type="text"/><br>
+    <button type="submit">Add Topic</button>
+  </form>
 
   </body>
 </html>

@@ -10,16 +10,16 @@
         <h1>Forum App</h1>
       </header>
       <section>
-        <a href="/topics/new">Add New Topic</href>
+        <a href="/topics/new">Add New Topic</a>
         <% topics.forEach((topic) => { %>
           <div class="topics-container">
-            <a href="/topics/<%= topics.id %>">
-              <h2><%= topics.title %></h2>
+            <a href="/topics/<%= topic.id %>">
+              <h2><%= topic.title %></h2>
             </a>
-            <p><%= topics.content %></p>
-            <p>LIKES: <%= topics.topics_votes %></p>
+            <p><%= topic.content %></p>
+            <p>LIKES: <%= topic.topic_votes%></p>
           </div>
-            <form action="">
+            <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
               <input type="submit" value="LIKE">
             </form>
         <% }); %>
