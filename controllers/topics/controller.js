@@ -1,7 +1,10 @@
+// TOPICS
+
 // application logic - responsible for rendering final view
 
 // require model - to access crud functions
 const Topic = require('../../models/topic');
+const Comments = require('../comments/controller');
 
 const controller = {};
 
@@ -38,6 +41,8 @@ controller.show = (req, res) => {
     .findById(req.params.id)
     .then(data => res.render('topics/show', { topics: data }))
     .catch(err => console.log('ERROR', err));
+  Comments
+    .findAllById
 }
 
 controller.like = (req, res) => {

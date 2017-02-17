@@ -1,3 +1,5 @@
+// TOPICS
+
 // app middleware looks for specific http verb
 // will link to object in controller.js and run that function
 const router = require('express').Router();

@@ -22,6 +22,21 @@
           <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE">
           </form>
+          <br>
+          <div class="comment-div">
+            <% comments.forEach((comment) => { %>
+              <p><%= comment.comment %></p>
+              <p><%= comment.username %></p>
+              <% }) %>
+          </div>
+          <br>
+          <div id ="add-comment-form">
+            <form action="/topics/<%= topics.id %>" method="POST">
+              <input name="comments[username]" placeholder="username" type="text"/><br>
+              <textarea name="comments[comment]" placeholder="add comment here..." id="" cols="30" rows="5"></textarea><br>
+              <input type="submit" value="ADD COMMENT">
+            </form>
+        </div>
         </div>
       </section>
     </main>
