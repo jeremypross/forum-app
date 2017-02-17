@@ -4,14 +4,14 @@
 
 // require model - to access crud functions
 const Topic = require('../../models/topic');
-const Comments = require('../comments/controller');
+const Comments = require('../../models/comments');
 
 const controller = {};
 
 controller.edit = (req, res) => {
   Topic
     .findById(req.params.id)
-    .then(data => res.render('topics/edit', { topics: data }))
+    .then(data => res.render('topics/edit', { topics: data[0] }))
     .catch(err => console.log('ERROR', err));
 }
 
@@ -36,13 +36,37 @@ controller.create = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+controller.createComment = (req, res) => {
+  Comments
+  .createComment(req.body.comments, req.params.id)
+  .then(() => {
+    res.redirect(`/topics/${req.params.id}`);
+  })
+  .catch((err) => {
+    res
+    .status(400)
+    .send(err)
+  });
+}
+
 controller.show = (req, res) => {
   Topic
     .findById(req.params.id)
-    .then(data => res.render('topics/show', { topics: data }))
-    .catch(err => console.log('ERROR', err));
-  Comments
-    .findAllById
+    .then((data) => {
+      Comments
+      .findAllById(req.params.id)
+      .then((comments) => {
+        res.render('topics/show', {
+          topics: data[0],
+          comments: comments
+        });
+      })
+    .catch((err) => {
+      res
+      .status(400)
+      .send(err);
+    });
+  });
 }
 
 controller.like = (req, res) => {
@@ -61,7 +85,7 @@ controller.like = (req, res) => {
 controller.update = (req, res) => {
   Topic
     .update(req.body.topics, req.params.id)
-    .then(() => res.redirect('/topics'))
+    .then((data) => res.redirect('/topics'))
     .catch(err => console.log('ERROR', err));
 }
 

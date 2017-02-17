@@ -22,4 +22,6 @@ router.get('/', controller.index);
 
 router.post('/new', controller.create);
 
+router.post('/:id', controller.createComment);
+
 module.exports = router;

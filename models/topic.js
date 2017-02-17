@@ -22,7 +22,7 @@ Topic.save = (topic) => {
 }
 
 Topic.findById = (id) => {
-  return db.one(`
+  return db.query(`
     SELECT *
     FROM topics
     WHERE id = $1`,
@@ -31,7 +31,7 @@ Topic.findById = (id) => {
 }
 
 Topic.like = (id) => {
-  return db.none(`
+  return db.query(`
     UPDATE topics
     SET topic_votes = topic_votes + 1
     WHERE id = $1`,
@@ -40,7 +40,7 @@ Topic.like = (id) => {
 }
 
 Topic.update = (topic, id) => {
-  return db.none(`
+  return db.query(`
     UPDATE topics
     SET
       title = $1,
@@ -52,7 +52,7 @@ Topic.update = (topic, id) => {
 }
 
 Topic.destroy = (id) => {
-  return db.none(`
+  return db.query(`
     DELETE FROM topics
     WHERE id = $1`,
   [id]);
