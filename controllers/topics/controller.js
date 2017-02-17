@@ -5,10 +5,17 @@ const Topic = require('../../models/topic');
 
 const controller = {};
 
+controller.edit = (req, res) => {
+  Topic
+    .findById(req.params.id)
+    .then(data => res.render('topics/edit', { topics: data }))
+    .catch(err => console.log('ERROR', err));
+}
+
 controller.index = (req, res) => {
   Topic
     .findAll()
-    .then(data => res.render('topics/index', { topics:data}))
+    .then(data => res.render('topics/index', { topics:data }))
     .catch(err => console.log('ERROR:', err));
 }
 
@@ -37,7 +44,11 @@ controller.like = (req, res) => {
   Topic
     .like(req.params.id)
     .then(() => {
-      res.redirect(`/topics/${req.params.id}`)
+      if (req.query.show) {
+        res.redirect(`/topics/${req.params.id}`)
+      } else {
+        res.redirect('/topics')
+      }
     })
     .catch(err => console.log('ERROR', err));
 }
@@ -49,10 +60,10 @@ controller.update = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
-controller.edit = (req, res) => {
+controller.destroy = (req, res) => {
   Topic
-    .findById(req.params.id)
-    .then(data => res.render('/topics/edit', {topics: data}))
+    .destroy(req.params.id)
+    .then(() => res.redirect('/topics'))
     .catch(err => console.log('ERROR', err));
 }
 

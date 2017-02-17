@@ -51,4 +51,11 @@ Topic.update = (topic, id) => {
   );
 }
 
+Topic.destroy = (id) => {
+  return db.none(`
+    DELETE FROM topics
+    WHERE id = $1`,
+  [id]);
+}
+
 module.exports = Topic;

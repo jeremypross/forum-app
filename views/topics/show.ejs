@@ -13,7 +13,7 @@
       <section>
           <p><%= topics.content %></p>
           <p>LIKES: <%= topics.topic_votes%></p>
-          <form action="/topics/<%= topics.id %>/edit" method="GET">
+          <form action="<%= topics.id %>/edit" method="GET">
             <input type="submit" value="EDIT">
           </form>
           <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">

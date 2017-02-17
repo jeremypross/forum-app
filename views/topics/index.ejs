@@ -17,6 +17,7 @@
               <h2><%= topic.title %></h2>
             </a>
             <p><%= topic.content %></p>
+            <p>Username: <%= topic.username %></p>
             <p>LIKES: <%= topic.topic_votes%></p>
           </div>
             <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
