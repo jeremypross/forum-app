@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forum App</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Forum App</h1>
+      </header>
+      <section>
+        <a href="/topics/new">Add New Topic</href>
+        <% topics.forEach((topic) => { %>
+          <div class="topics-container">
+            <a href="/topics/<%= topics.id %>">
+              <h2><%= topics.title %></h2>
+            </a>
+            <p><%= topics.content %></p>
+            <p>LIKES: <%= topics.topics_votes %></p>
+          </div>
+            <form action="">
+              <input type="submit" value="LIKE">
+            </form>
+        <% }); %>
+      </section>
+    </main>
+
+  </body>
+</html>

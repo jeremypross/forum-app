@@ -1,7 +1,7 @@
 const router  = require('express').Router();
 
 // map route URLs
-router.use('/', require('./controllers/topics'));
-router.use('/show', require('./controllers/comments'));
+router.use('/topics', require('./controllers/topics'));
+router.use('/topics/new', require('./controllers/topics'));
 
 module.exports = router;
