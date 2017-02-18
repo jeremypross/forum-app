@@ -1,3 +1,5 @@
+// COMMENTS model
+
 const db = require('../config/database');
 
 const comment = {};

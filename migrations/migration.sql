@@ -14,5 +14,5 @@ CREATE TABLE comments (
   comment_votes INTEGER DEFAULT 0,
   username VARCHAR(255),
   comment TEXT,
-  topic_id BIGSERIAL REFERENCES topics(id)
+  topic_id BIGSERIAL REFERENCES topics(id) ON DELETE CASCADE
 );

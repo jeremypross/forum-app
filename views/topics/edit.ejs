@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Edit Topic</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
   </head>
   <body>
     <main>
@@ -11,7 +14,7 @@
       </header>
       <section>
         <form action="/topics/<%= topics.id %>?_method=PUT" method="POST">
-          <label for="topics[title]">NAME:</label><br>
+          <label for="topics[title]">Title:</label><br>
           <input type="text" name="topics[title]" value="<%= topics.title %>"><br>
           <label for="topics[content]">Content:</label><br>
           <input type="text" name="topics[content]" value="<%= topics.content %>"><br>

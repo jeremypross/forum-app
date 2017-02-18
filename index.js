@@ -17,8 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
-
-// method override
+ // method override
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 

@@ -1,6 +1,4 @@
-// TOPICS
-
-// application logic - responsible for rendering final view
+// TOPICS controller - application logic - responsible for rendering final view
 
 // require model - to access crud functions
 const Topic = require('../../models/topic');
