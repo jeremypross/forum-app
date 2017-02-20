@@ -34,6 +34,19 @@ controller.create = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+controller.commentLike = (req, res) => {
+  Comments
+  .commentLike(req.params.commentLike)
+  .then(() => {
+    res.redirect(`/topics/${req.params.id}`)
+  })
+  .catch((err) => {
+    res
+    .status(400)
+    .send(err)
+  });
+}
+
 controller.createComment = (req, res) => {
   Comments
   .createComment(req.body.comments, req.params.id)
@@ -93,5 +106,12 @@ controller.destroy = (req, res) => {
     .then(() => res.redirect('/topics'))
     .catch(err => console.log('ERROR', err));
 }
+
+// controller.destroyComment = (req, res) => {
+//   comment
+//     .destroyComment(req.params.id)
+//     .then(() => res.redirect('/topics'))
+//     .catch(err => console.log('ERROR', err));
+// }
 
 module.exports = controller;

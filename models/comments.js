@@ -1,4 +1,4 @@
-// COMMENTS model
+// COMMENTS model - object representation of db
 
 const db = require('../config/database');
 
@@ -20,6 +20,15 @@ comment.createComment = (comment, id) => {
     ($1, $2, $3)`,
     [comment.username, comment.comment, id]
   );
+}
+
+comment.commentLike = (id) => {
+  return db.query(`
+    UPDATE comments
+    SET comment_votes = comment_votes + 1
+    WHERE id = $1`,
+    [id]
+  )
 }
 
 module.exports = comment;
