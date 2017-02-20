@@ -6,6 +6,7 @@ CREATE TABLE topics (
   topic_votes INTEGER DEFAULT 0,
   title VARCHAR(255),
   content TEXT,
+  comments INTEGER DEFAULT 0,
   username VARCHAR(255) DEFAULT 'anonymous'
 );
 

@@ -1,10 +1,16 @@
 body {
   padding: 20px;
   font-family: 'Hind', sans-serif;
+  background-color: rgb(245,245,245);
+}
+
+header {
+  background-color: gray;
 }
 
 h1, h3{
   text-align: center;
+  padding: 0;
 }
 
 .add-topic {
@@ -14,6 +20,7 @@ h1, h3{
 .topics-container {
   border: 1px solid black;
   border-radius: 5px;
+  box-shadow: 5px 5px 3px #666;
   padding: 10px;
   margin: 10px 0;
 }
@@ -25,6 +32,7 @@ h1, h3{
   margin: 10px;
   padding: 10px;
   border-radius: 6px;
+  box-shadow: 5px 5px 3px #666;
 }
 
 #add-comment-form {

@@ -51,6 +51,15 @@ Topic.update = (topic, id) => {
   );
 }
 
+Topic.allComments = (id) => {
+  return db.query(`
+   UPDATE topics
+   SET comments = comments + 1
+   WHERE id = $1`,
+   [id]
+ );
+}
+
 Topic.destroy = (id) => {
   return db.query(`
     DELETE FROM topics

@@ -53,6 +53,8 @@ controller.createComment = (req, res) => {
   .then(() => {
     res.redirect(`/topics/${req.params.id}`);
   })
+  Topic
+  .allComments(req.params.id)
   .catch((err) => {
     res
     .status(400)
@@ -96,7 +98,7 @@ controller.like = (req, res) => {
 controller.update = (req, res) => {
   Topic
     .update(req.body.topics, req.params.id)
-    .then((data) => res.redirect('/topics'))
+    .then((data) => res.redirect(`/topics/${req.params.id}`))
     .catch(err => console.log('ERROR', err));
 }
 

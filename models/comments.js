@@ -7,7 +7,8 @@ const comment = {};
 comment.findAllById = (id) => {
   return db.query(`
     SELECT * FROM comments
-    WHERE topic_id = $1`,
+    WHERE topic_id = $1
+    ORDER BY comment_votes DESC`,
     [id]
   )
 }
