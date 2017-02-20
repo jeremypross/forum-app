@@ -13,7 +13,7 @@ CREATE TABLE topics (
 CREATE TABLE comments (
   id BIGSERIAL PRIMARY KEY,
   comment_votes INTEGER DEFAULT 0,
-  username VARCHAR(255),
+  username VARCHAR(255) DEFAULT 'anonymous',
   comment TEXT,
   topic_id BIGSERIAL REFERENCES topics(id) ON DELETE CASCADE
 );

@@ -10,7 +10,7 @@ comment.findAllById = (id) => {
     WHERE topic_id = $1
     ORDER BY comment_votes DESC`,
     [id]
-  )
+  );
 }
 
 comment.createComment = (comment, id) => {
@@ -29,7 +29,7 @@ comment.commentLike = (id) => {
     SET comment_votes = comment_votes + 1
     WHERE id = $1`,
     [id]
-  )
+  );
 }
 
 module.exports = comment;

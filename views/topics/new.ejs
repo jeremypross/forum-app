@@ -9,13 +9,16 @@
     <script type="text/javascript" src="/js/main.js"></script>
   </head>
   <body>
-    <h1>Add Topic</h1>
-    <form method="POST" action="/topics/new"><br>
-      <input name="topics[title]" placeholder="subject" type="text"/><br>
-      <input name="topics[content]" placeholder="content" type="text"/><br>
-      <input name="topics[username]" placeholder="username" type="text"/><br>
-    <button type="submit">Add Topic</button>
-  </form>
-
+    <main>
+      <div id="add-topic-form">
+        <h1>Add Topic</h1>
+        <form method="POST" action="/topics/new"><br>
+          <input name="topics[title]" placeholder="subject" type="text"/><br>
+          <textarea name="topics[content]" placeholder="content" type="text"/></textarea><br>
+          <input name="topics[username]" placeholder="username" type="text"/><br>
+         <button type="submit">Add Topic</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

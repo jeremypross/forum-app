@@ -10,31 +10,34 @@
   </head>
   <body>
     <main>
+      <h1><%= topics.title %></h1>
+      <a href="/topics/">Back to Forum:</a>
       <div class="topics-container">
-        <a href="/topics/">Back to Forum:</a>
       <header>
-        <h1><%= topics.title %></h1>
       </header>
       <section>
           <p><%= topics.content %></p>
-          <p>LIKES: <%= topics.topic_votes%></p>
-          <form action="/topics/<%= topics.id %>/edit" method="GET">
-            <input type="submit" value="EDIT">
-          </form>
-          <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
-            <input type="submit" value="LIKE">
-          </form>
-          <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
-          </form>
-          <br>
+          <p>Likes: <%= topics.topic_votes%></p>
+          <p align="right">Author: <%= topics.username%></p>
+
+          <div id="show-form-options">
+            <form action="/topics/<%= topics.id %>/edit" method="GET">
+              <input type="submit" value="EDIT">
+            </form>
+            <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
+              <input type="submit" value="LIKE">
+            </form>
+            <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
+              <input type="submit" value="DELETE">
+            </form>
+            <br>
+          </div>
           <div class="comment-container">
             <h3>Comments:</h3>
             <% comments.forEach((comment) => { %>
-
               <p><%= comment.comment %></p>
               <p><%= comment.username %></p>
-              <p>LIKES: <%= comment.comment_votes%></p>
+              <p>Likes: <%= comment.comment_votes%></p>
               <form action="/topics/<%= topics.id %>/<%= comment.id %>?_method=PUT" method="POST">
                 <input type="submit" value="LIKE">
               </form>

@@ -9,7 +9,6 @@ const controller = require('./controller');
 // attach restful routes to controller object methods
 router.get('/:id/edit', controller.edit);
 
-
 router.put('/:id/like', controller.like);
 
 router.put('/:id/:commentLike', controller.commentLike);

@@ -4,13 +4,13 @@ body {
   background-color: rgb(245,245,245);
 }
 
-header {
-  background-color: gray;
-}
-
 h1, h3{
   text-align: center;
   padding: 0;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 .add-topic {
@@ -37,4 +37,12 @@ h1, h3{
 
 #add-comment-form {
   text-align: center;
+}
+
+#add-topic-form {
+  text-align: center;
+}
+
+#show-form-options {
+  text-align: right;
 }

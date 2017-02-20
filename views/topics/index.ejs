@@ -24,8 +24,8 @@
             </a>
             <p><%= topic.content %></p>
             <p>Username: <%= topic.username %></p>
-            <p>LIKES: <%= topic.topic_votes%></p>
-            <p>COMMENTS: <%= topic.comments %></p>
+            <p>Likes: <%= topic.topic_votes%></p>
+            <p>Comments: <%= topic.comments %></p>
             <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
               <input type="submit" value="LIKE">
             </form>
