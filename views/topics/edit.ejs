@@ -5,7 +5,9 @@
     <title>Edit Topic</title>
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
   </head>
@@ -23,7 +25,7 @@
             <input type="text" name="topics[content]" value="<%= topics.content %>"><br>
             <label for="topics[username]">Username:</label><br>
             <input type="text" name="topics[username]" value="<%= topics.username %>"><br>
-            <input type="submit" value="EDIT TOPIC">
+            <input class="waves-effect waves-light btn blue" type="submit" value="EDIT TOPIC">
           </form>
         </div>
       </section>

@@ -5,7 +5,9 @@
     <title><%= topics.title %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
   </head>
@@ -20,28 +22,29 @@
           <p>Author: <%= topics.username%></p>
             <div id="show-form-options">
               <form action="/topics/<%= topics.id %>/edit" method="GET">
-                <input type="submit" value="EDIT" class="button">
+                <input class="waves-effect waves-light btn blue" type="submit" value="EDIT"></a>
               </form>
               <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
-                <input type="submit" value="LIKE" class="button">
+                <input class="waves-effect waves-light btn blue" type="submit" value="LIKE"></a>
               </form>
               <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE" class="button">
+                <input class="waves-effect waves-light btn blue" type="submit" value="DELETE"></a>
               </form>
               <br>
             </div>
-        </div>
-            <h3>Comments:</h3>
-            <% comments.forEach((comment) => { %>
-              <div class="comment-container">
-                <p><%= comment.comment %></p>
-                <p>Author: <%= comment.username %></p>
-                <p>Likes: <%= comment.comment_votes%></p>
-                <form action="/topics/<%= topics.id %>/<%= comment.id %>?_method=PUT" method="POST">
-                  <input type="submit" value="LIKE">
-                </form>
-              </div>
-              <% }); %>
+      </div>
+
+          <h3>Comments:</h3>
+          <% comments.forEach((comment) => { %>
+            <div class="comment-container">
+              <p><%= comment.comment %></p>
+              <p>Author: <%= comment.username %></p>
+              <p>Likes: <%= comment.comment_votes%></p>
+              <form action="/topics/<%= topics.id %>/<%= comment.id %>?_method=PUT" method="POST">
+                <input class="waves-effect waves-light btn blue" type="submit" value="LIKE">
+              </form>
+            </div>
+          <% }); %>
           <br>
           <div id="add-comment-form">
             <form action="/topics/<%= topics.id %>" method="POST">
