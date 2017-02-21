@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Forum App</title>
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+    <link rel="stylesheet" href="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
@@ -11,26 +12,30 @@
   <body>
     <main>
       <header>
-        <h1>Forum App</h1>
+        <h1>Forum</h1>
       </header>
       <section>
         <div class="add-topic">
-        <a href="/topics/new">++ ADD TOPIC ++</a>
+        <a href="/topics/new">ADD TOPIC +</a>
         </div>
+        <div class="container">
         <% topics.forEach((topic) => { %>
           <div class="topics-container">
-            <a href="/topics/<%= topic.id %>">
-              <h2><%= topic.title %></h2>
-            </a>
-            <p><%= topic.content %></p>
-            <p>Username: <%= topic.username %></p>
-            <p>Likes: <%= topic.topic_votes%></p>
-            <p>Comments: <%= topic.comments %></p>
-            <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
-              <input type="submit" value="LIKE">
-            </form>
+            <div class="col">
+              <a href="/topics/<%= topic.id %>">
+                <h2><%= topic.title %></h2>
+              </a>
+              <p><%= topic.content %></p>
+              <p>Author: <%= topic.username %></p>
+              <p>Likes: <%= topic.topic_votes%></p>
+              <p>Comments: <%= topic.comments %></p>
+              <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
+                <input type="submit" value="LIKE">
+              </form>
+            </div>
           </div>
         <% }); %>
+    </div>
       </section>
     </main>
 

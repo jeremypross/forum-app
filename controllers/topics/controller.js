@@ -3,6 +3,7 @@
 // require model - to access crud functions
 const Topic = require('../../models/topic');
 const Comments = require('../../models/comments');
+const Subcomments = require('../../models/subcomments');
 
 const controller = {};
 
@@ -61,6 +62,19 @@ controller.createComment = (req, res) => {
     .send(err)
   });
 }
+
+// controller.createSubComment = (req, res) => {
+//   Subcomments
+//     .createSubComment(req.body.subcomments, req.params.id)
+//     .then(() => {
+//       res.redirect(`/topics/${req.params.id}`);
+//     })
+//     .catch((err) => {
+//       res
+//       .status(400)
+//       .send(err)
+//     });
+// }
 
 controller.show = (req, res) => {
   Topic

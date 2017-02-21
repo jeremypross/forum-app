@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title><%= topics.title %></title>
-    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
@@ -13,45 +14,41 @@
       <h1><%= topics.title %></h1>
       <a href="/topics/">Back to Forum:</a>
       <div class="topics-container">
-      <header>
-      </header>
-      <section>
+        <section>
           <p><%= topics.content %></p>
           <p>Likes: <%= topics.topic_votes%></p>
-          <p align="right">Author: <%= topics.username%></p>
-
-          <div id="show-form-options">
-            <form action="/topics/<%= topics.id %>/edit" method="GET">
-              <input type="submit" value="EDIT">
-            </form>
-            <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
-              <input type="submit" value="LIKE">
-            </form>
-            <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
-              <input type="submit" value="DELETE">
-            </form>
-            <br>
-          </div>
-          <div class="comment-container">
+          <p>Author: <%= topics.username%></p>
+            <div id="show-form-options">
+              <form action="/topics/<%= topics.id %>/edit" method="GET">
+                <input type="submit" value="EDIT" class="button">
+              </form>
+              <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
+                <input type="submit" value="LIKE" class="button">
+              </form>
+              <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" class="button">
+              </form>
+              <br>
+            </div>
+        </div>
             <h3>Comments:</h3>
             <% comments.forEach((comment) => { %>
-              <p><%= comment.comment %></p>
-              <p><%= comment.username %></p>
-              <p>Likes: <%= comment.comment_votes%></p>
-              <form action="/topics/<%= topics.id %>/<%= comment.id %>?_method=PUT" method="POST">
-                <input type="submit" value="LIKE">
-              </form>
-              <hr />
+              <div class="comment-container">
+                <p><%= comment.comment %></p>
+                <p>Author: <%= comment.username %></p>
+                <p>Likes: <%= comment.comment_votes%></p>
+                <form action="/topics/<%= topics.id %>/<%= comment.id %>?_method=PUT" method="POST">
+                  <input type="submit" value="LIKE">
+                </form>
+              </div>
               <% }); %>
-          </div>
           <br>
           <div id="add-comment-form">
             <form action="/topics/<%= topics.id %>" method="POST">
-              <input name="comments[username]" placeholder="username" type="text"/><br>
+              <input name="comments[username]" placeholder="username" type="text"/><br><br>
               <textarea name="comments[comment]" placeholder="add comment here..." id="" cols="30" rows="5"></textarea><br>
               <input type="submit" value="ADD COMMENT">
             </form>
-        </div>
         </div>
       </section>
     </main>
