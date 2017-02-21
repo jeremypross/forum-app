@@ -21,7 +21,8 @@ app.use(bodyParser.json());
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
-app.listen(process.env.PORT || 3000);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {console.log('Listening on', PORT)});
 
 // connect to resources.js
 app.use(require('./resources'));

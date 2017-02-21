@@ -30,16 +30,15 @@
 ## Technologies Used:
 
 * HTML - built views
-* CSS - styled viewss
+* CSS - styled views
 * Javascript / jQuery
 * PostgreSQL - built database and created object models for each table
 * Node - created app in Node with Express
 * NPM Dependencies:
-  - body-parser
-  - ejs
-  - express
-  - method-override
-  - morgan
-  - path
-  - pg-promise
-  - pjs
+  - body-parser - bundles form data
+  - ejs - templating agent
+  - express - server 
+  - method-override - adding PUT and DELETE actions
+  - morgan - workflow tool - logger
+  - path - directs to public assets folder
+  - pg-promise - database connection
