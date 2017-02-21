@@ -2,11 +2,11 @@
 
 ## Wireframe:
 
-![Wireframe 1](/forum-app/public/img/wireframe1.png)
+![Wireframe 1](/public/img/wireframe1.png)
 
-![Wireframe 2](/forum-app/public/img/wireframe2.png)
+![Wireframe 2](/public/img/wireframe2.png)
 
-![Wireframe 3](/forum-app/public/img/wireframe3.png)
+![Wireframe 3](/public/img/wireframe3.png)
 
 ## ERD:
 ![ERD](/forum-app/public/img/erd.png)
