@@ -9,6 +9,10 @@ h1, h2, h3 {
   padding: 0;
 }
 
+h2 {
+  font-size: 1.7em;
+}
+
 input {
   border-radius: 3px;
   margin-top: 4px;
@@ -54,23 +58,26 @@ a:hover {
 
 #add-comment-form {
   text-align: center;
+  padding: 0 28% 0 28%;
 }
 
 #add-topic-form {
   text-align: center;
+  padding: 0 25% 0 25%;
 }
 
 #edit-topic-form {
   text-align: center;
+  padding: 0 25% 0 25%;
 }
 
-#show-form-options {
-  text-align: left;
+/* centers inputs */
+::-webkit-input-placeholder {
+   text-align: center;
 }
 
 
 @media(max-width: 700px) {
-
   .container {
     display: block;
   }
