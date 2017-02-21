@@ -13,6 +13,8 @@
 
 ## Approach:
 
+* My approach was to first build each table's schema and establish the database's structure. Next, I built out each of the methods of the topics controller one at a time.  After, I was able to create, edit, delete and like topics, I built out the comments controller, where users can create and like comments.
+
 ## User Stories:
 
 * User should be able to post a new topic.
@@ -27,12 +29,12 @@
 
 ## Technologies Used:
 
-* HTML
-* CSS
+* HTML - built views
+* CSS - styled viewss
 * Javascript / jQuery
-* PostgreSQL
-* Node
-* Dependencies:
+* PostgreSQL - built database and created object models for each table
+* Node - created app in Node with Express
+* NPM Dependencies:
   - body-parser
   - ejs
   - express
