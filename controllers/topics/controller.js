@@ -63,19 +63,6 @@ controller.createComment = (req, res) => {
   });
 }
 
-// controller.createSubComment = (req, res) => {
-//   Subcomments
-//     .createSubComment(req.body.subcomments, req.params.id)
-//     .then(() => {
-//       res.redirect(`/topics/${req.params.id}`);
-//     })
-//     .catch((err) => {
-//       res
-//       .status(400)
-//       .send(err)
-//     });
-// }
-
 controller.show = (req, res) => {
   Topic
     .findById(req.params.id)
@@ -122,12 +109,5 @@ controller.destroy = (req, res) => {
     .then(() => res.redirect('/topics'))
     .catch(err => console.log('ERROR', err));
 }
-
-// controller.destroyComment = (req, res) => {
-//   comment
-//     .destroyComment(req.params.id)
-//     .then(() => res.redirect('/topics'))
-//     .catch(err => console.log('ERROR', err));
-// }
 
 module.exports = controller;

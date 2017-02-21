@@ -1,3 +1,4 @@
+// app entry point - configures app dependencies & port
 // declare express
 const express = require('express');
 const app     = express();

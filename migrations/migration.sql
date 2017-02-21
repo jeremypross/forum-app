@@ -1,5 +1,7 @@
-DROP TABLE IF EXISTS topics;
-DROP TABLE IF EXISTS comments;
+-- schema to create db tables
+
+-- DROP TABLE IF EXISTS topics;
+-- DROP TABLE IF EXISTS comments;
 
 CREATE TABLE topics (
   id BIGSERIAL PRIMARY KEY,

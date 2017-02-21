@@ -6,7 +6,7 @@ const router = require('express').Router();
 // link to controller.js
 const controller = require('./controller');
 
-// attach restful routes to controller object methods
+// attach http routes to controller object methods
 router.get('/:id/edit', controller.edit);
 
 router.put('/:id/like', controller.like);
@@ -20,8 +20,6 @@ router.get('/:id', controller.show);
 router.put('/:id', controller.update);
 
 router.delete('/:id', controller.destroy);
-
-// router.delete('/:id', controller.destroyComment);
 
 router.get('/', controller.index);
 
