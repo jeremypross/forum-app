@@ -9,7 +9,7 @@
 ![Wireframe 3](/public/img/wireframe3.png)
 
 ## ERD:
-![ERD](/forum-app/public/img/erd.png)
+![ERD](/public/img/erd.png)
 
 ## Approach:
 
