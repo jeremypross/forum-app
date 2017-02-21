@@ -33,11 +33,10 @@
 * CSS - styled views
 * Javascript / jQuery
 * PostgreSQL - built database and created object models for each table
-* Node - created app in Node with Express
-* NPM Dependencies:
+* Node.js / Express.js
+* Node Dependencies:
   - body-parser - bundles form data
   - ejs - templating agent
-  - express - server 
   - method-override - adding PUT and DELETE actions
   - morgan - workflow tool - logger
   - path - directs to public assets folder

@@ -22,13 +22,13 @@
           <p>Author: <%= topics.username%></p>
             <div id="show-form-options">
               <form action="/topics/<%= topics.id %>/edit" method="GET">
-                <input class="waves-effect waves-light btn blue" type="submit" value="EDIT"></a>
+                <input class="waves-effect waves-light btn blue s6" type="submit" value="EDIT"></a>
               </form>
               <form action="/topics/<%= topics.id %>/like?_method=PUT&show=true" method="POST">
-                <input class="waves-effect waves-light btn blue" type="submit" value="LIKE"></a>
+                <input class="waves-effect waves-light btn blue s6" type="submit" value="LIKE"></a>
               </form>
               <form action="/topics/<%= topics.id %>?_method=DELETE" method="POST">
-                <input class="waves-effect waves-light btn blue" type="submit" value="DELETE"></a>
+                <input class="waves-effect waves-light btn blue s6" type="submit" value="DELETE"></a>
               </form>
               <br>
             </div>

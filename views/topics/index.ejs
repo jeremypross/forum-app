@@ -31,9 +31,11 @@
               <p>Author: <%= topic.username %></p>
               <p>Likes: <%= topic.topic_votes%></p>
               <p>Comments: <%= topic.comments %></p>
-              <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
-                <input class="waves-effect waves-light btn blue" type="submit" value="LIKE">
-              </form>
+              <div class="like-button">
+                <form action="/topics/<%= topic.id %>/like?_method=PUT" method="POST">
+                  <input class="waves-effect waves-light btn blue" type="submit" value="LIKE">
+                </form>
+              </div>
             </div>
           </div>
         <% }); %>

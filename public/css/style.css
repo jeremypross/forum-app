@@ -56,6 +56,10 @@ a:hover {
   text-align: center;
 }
 
+.like-button {
+  text-align: center;
+}
+
 #add-comment-form {
   text-align: center;
   padding: 0 28% 0 28%;
