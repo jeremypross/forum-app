@@ -1,3 +1,8 @@
+// topics model - object representation of database
+// stores SQL queries in object method callbacks
+
+
+// require database
 const db = require('../config/database');
 
 let Topic = {};

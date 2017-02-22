@@ -13,13 +13,11 @@
 
 ## Approach:
 
-* My approach was to first build each table's schema and establish the database's structure. Next, I built out each of the methods of the topics controller one at a time.  After, I was able to create, edit, delete and like topics, I built out the comments controller, where users can create and like comments.
+* My approach was to establish the database's structure and build the schema. Next, I built out each of the methods of the topics controller one at a time.  After I was able to create, edit, delete and like topics, I added a controller for the comments table, where users can create and like comments.
 
 ## User Stories:
 
-* User should be able to post a new topic.
-
-* User should be able to edit and delete topics.
+* User should be able to post a new topic, as well as edit and delete topics.
 
 * User should be able to comment on topics.
 

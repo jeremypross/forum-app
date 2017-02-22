@@ -1,10 +1,10 @@
 // TOPICS controller - application logic - responsible for rendering final view
 
-// require model - to access crud functions
+// require models - to access crud functions
 const Topic = require('../../models/topic');
 const Comments = require('../../models/comments');
-const Subcomments = require('../../models/subcomments');
 
+// store empty object to assign methods inside
 const controller = {};
 
 controller.edit = (req, res) => {
@@ -36,6 +36,7 @@ controller.create = (req, res) => {
 }
 
 controller.commentLike = (req, res) => {
+  // modify req.params object for likes
   Comments
   .commentLike(req.params.commentLike)
   .then(() => {
