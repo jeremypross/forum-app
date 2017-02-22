@@ -7,6 +7,7 @@ const router = require('express').Router();
 const controller = require('./controller');
 
 // attach http routes to controller object methods
+// path defines action for server to take
 router.get('/:id/edit', controller.edit);
 
 router.put('/:id/like', controller.like);

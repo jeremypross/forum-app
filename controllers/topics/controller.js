@@ -7,6 +7,7 @@ const Comments = require('../../models/comments');
 // store empty object to assign methods inside
 const controller = {};
 
+// edit topic function
 controller.edit = (req, res) => {
   Topic
     .findById(req.params.id)
@@ -14,6 +15,7 @@ controller.edit = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+// index function - find all
 controller.index = (req, res) => {
   Topic
     .findAll()
@@ -21,10 +23,12 @@ controller.index = (req, res) => {
     .catch(err => console.log('ERROR:', err));
 }
 
+// render new page
 controller.new = (req, res) => {
   res.render('./topics/new');
 }
 
+// create topic
 controller.create = (req, res) => {
   console.log(req.body.topics);
   Topic
@@ -35,6 +39,7 @@ controller.create = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+// like a comment
 controller.commentLike = (req, res) => {
   // modify req.params object for likes
   Comments
@@ -49,6 +54,7 @@ controller.commentLike = (req, res) => {
   });
 }
 
+// create comment
 controller.createComment = (req, res) => {
   Comments
   .createComment(req.body.comments, req.params.id)
@@ -64,6 +70,7 @@ controller.createComment = (req, res) => {
   });
 }
 
+// display the topic and all related comments in show.ejs
 controller.show = (req, res) => {
   Topic
     .findById(req.params.id)
@@ -84,6 +91,7 @@ controller.show = (req, res) => {
   });
 }
 
+// topic likes
 controller.like = (req, res) => {
   Topic
     .like(req.params.id)
@@ -97,6 +105,7 @@ controller.like = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+// edit topic
 controller.update = (req, res) => {
   Topic
     .update(req.body.topics, req.params.id)
@@ -104,6 +113,7 @@ controller.update = (req, res) => {
     .catch(err => console.log('ERROR', err));
 }
 
+// delete topic
 controller.destroy = (req, res) => {
   Topic
     .destroy(req.params.id)
