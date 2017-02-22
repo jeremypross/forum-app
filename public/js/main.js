@@ -16,8 +16,4 @@ $(document).ready(() => {
     }
   })
 
-  $('#add-modal').on('click', (event) => {
-    $('#add-modal').css('visibility', 'hidden');
-  })
-
 });
